@@ -1,0 +1,198 @@
+$color-grey-500: #4D4F62;
+$color-grey-400: #6A7178;
+$color-white: #FFFFFF;
+$color-red: #EA5454;
+$color-cyan: #44D3D2;
+$color-blue: #549EF2;
+$color-orange: #FCAE4A;
+$font-size-36: 3.6rem;
+$font-size-24: 2.4rem;
+$font-size-20: 2rem;
+$font-size-15: 1.5rem;
+$font-size-13: 1.3rem;
+$line-height-140: 1.4;
+$line-height-135: 1.35;
+$line-height-160: 1.6;
+$letter-spacing-025: 0.25px;
+$letter-spacing-0: 0;
+$font-weight-semibold: 600;
+$font-weight-extra_light: 200;
+$font-weight-regular: 400;
+$space-40: 4rem;
+$space-32: 3.2rem;
+$space-24: 2.4rem;
+$space-16: 1.6rem;
+$space-8: 0.8rem;
+
+@mixin tablet {
+    @media screen and (min-width: 48em) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 64em) {
+        @content;
+    }
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    // padding: $space-40;
+
+
+
+    .titles {
+        width: 31.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: $space-16;
+        text-align: center;
+        margin: auto;
+        color: $color-grey-500;
+
+        @include tablet() {
+            width: 54rem;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column-reverse;
+            font-size: 2.4rem;
+            line-height: $line-height-140;
+            letter-spacing: $letter-spacing-025;
+
+            @include tablet() {
+                font-size: $font-size-36;
+            }
+
+            h2 {
+                font-weight: $font-weight-extra_light;
+                font-size: inherit;
+            }
+
+            h1 {
+                font-weight: $font-weight-semibold;
+                font-size: inherit;
+            }
+        }
+
+        p {
+            font-weight: $font-weight-regular;
+            font-size: $font-size-15;
+            line-height: $line-height-140;
+            letter-spacing: 0.1px;
+        }
+    }
+
+    .card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: $space-32;
+        justify-content: center;
+        align-items: center;
+
+        @include desktop() {
+            flex-direction: row;
+        }
+
+
+        .card-content {
+            width: fit-content;
+            height: 25rem;
+            padding: $space-32;
+            border-radius: $space-8;
+            filter: drop-shadow(0px 15px 30px #83A6D2);
+            display: flex;
+            flex-direction: column;
+            gap: $space-32;
+
+
+
+            .card-title {
+                width: 25rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.6rem;
+
+                h2 {
+                    font-weight: $font-weight-semibold;
+                    font-size: $font-size-20;
+                    line-height: $line-height-135;
+                    letter-spacing: $letter-spacing-0;
+                    color: $color-grey-500;
+                }
+
+                p {
+                    font-weight: $font-weight-regular;
+                    font-size: $font-size-13;
+                    line-height: $line-height-160;
+                    letter-spacing: 0.09px;
+                    color: $color-grey-400;
+                }
+            }
+
+            .card-icon {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+
+                img {
+                    width: 6.4rem;
+                    height: 6.4rem;
+                }
+            }
+        }
+
+        .card_cyan {
+            background: linear-gradient(180deg, $color-cyan 3%, $color-white 0%);
+        }
+
+        .card_red {
+            background: linear-gradient(180deg, $color-red 3%, $color-white 0%);
+        }
+
+        .card_orange {
+            background: linear-gradient(180deg, $color-orange 3%, $color-white 0%);
+        }
+
+        .card_blue {
+            background: linear-gradient(180deg, $color-blue 3%, $color-white 0%);
+        }
+
+        .card-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+
+            @include tablet() {
+                flex-direction: row;
+            }
+
+            @include desktop() {
+                flex-direction: column;
+            }
+        }
+    }
+
+}
